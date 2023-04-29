@@ -186,7 +186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PackagePrefab: {fileID: 2995247937127899689, guid: aa9224d80f6e93d42824070c84aa28c6, type: 3}
   PackageSpawnLocation: {fileID: 2719384627865269116}
-  SpawnCooldown: 5
+  SpawnCooldown: 2
 --- !u!61 &329407086066229642
 BoxCollider2D:
   m_ObjectHideFlags: 0

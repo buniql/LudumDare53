@@ -23,6 +23,7 @@ public class EnemyController : MonoBehaviour
     
     void Start()
     {
+        transform.localScale *= Random.Range(.8f, 1.2f);
         Player = GameObject.Find("Player");
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }

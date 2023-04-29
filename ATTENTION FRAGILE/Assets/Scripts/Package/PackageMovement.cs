@@ -9,7 +9,7 @@ public class PackageMovement : MonoBehaviour
     private float currentTime = 0f;
 
     private Vector2 direction = Vector2.zero;
-    private bool active = true;
+    public bool active = true;
     
     private Camera _mainCamera;
     private Rigidbody2D _rigidbody2D;
@@ -20,6 +20,9 @@ public class PackageMovement : MonoBehaviour
         
         direction = (Vector2)_mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
         direction = direction.normalized;
+        
+        gameObject.GetComponent<BoxCollider2D>().enabled = false;
+        StartCoroutine(SetColliderActive());
     }
 
     // Update is called once per frame
@@ -27,16 +30,20 @@ public class PackageMovement : MonoBehaviour
     {
         if (currentTime < PlayerStats.ShootDistance && active)
         {
-            gameObject.GetComponent<BoxCollider2D>().enabled = false;
             _rigidbody2D.MovePosition(_rigidbody2D.position + direction * PlayerStats.ShootSpeed * Time.fixedDeltaTime);
             currentTime += Time.fixedDeltaTime;
         }
 
         if (currentTime >= PlayerStats.ShootDistance)
         {
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
             active = false;
         }
+    }
+
+    private IEnumerator SetColliderActive()
+    {
+        yield return new WaitForSeconds(.1f);
+        gameObject.GetComponent<BoxCollider2D>().enabled = true;
     }
 
     public void Deactivate()

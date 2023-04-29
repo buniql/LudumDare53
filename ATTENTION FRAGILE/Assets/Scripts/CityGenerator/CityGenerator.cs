@@ -52,7 +52,7 @@ public class CityGenerator : MonoBehaviour
         
         roomGrid[lootRoomLocation] = 2;
         _roomIndexes = null;
-        
+
         foreach (var room in roomGrid)
         {
             GameObject toSpawn = new GameObject();
@@ -65,10 +65,10 @@ public class CityGenerator : MonoBehaviour
                     toSpawn = DefaultRooms[Random.Range(0, DefaultRooms.Count - 1)];
                     break;
                 case 2:
-                    toSpawn = ItemRoom[Random.Range(0, DefaultRooms.Count - 1)];;
+                    toSpawn = ItemRoom[0];;
                     break;
                 case 3:
-                    toSpawn = BossRooms[Random.Range(0, DefaultRooms.Count - 1)];;
+                    toSpawn = BossRooms[0];;
                     break;
             }
             
