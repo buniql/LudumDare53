@@ -29,6 +29,11 @@ public class PackageMovement : MonoBehaviour
         if (currentTime >= ThrowTime) active = false;
     }
 
+    public void Deactivate()
+    {
+        active = false;
+    }
+
     public void Reset()
     {
         currentTime = 0f;
