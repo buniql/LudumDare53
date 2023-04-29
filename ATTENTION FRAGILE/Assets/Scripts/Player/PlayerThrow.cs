@@ -18,7 +18,6 @@ public class PlayerThrow : MonoBehaviour
     private void Start()
     {
         _mainCamera = Camera.main;
-        PacketList.Add(PacketPrefab);
     }
 
     // Update is called once per frame
