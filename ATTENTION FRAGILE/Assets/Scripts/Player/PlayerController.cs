@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public PlayerStats PlayerStats;
+
+    private int currentHealth;
+    
     public GameObject Sprite;
 
-    public float MovementSpeed = 5;
-    
     private float activeMovementSpeed;
     
-    public float DashSpeed = 10;
-    public float DashDuration = .5f;
-    public float DashCooldown = 2;
     private bool canDash = true;
 
     private Camera _mainCamera;
@@ -22,8 +21,9 @@ public class PlayerController : MonoBehaviour
     {
         _mainCamera = Camera.main;
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        
-        activeMovementSpeed = MovementSpeed;
+
+        currentHealth = PlayerStats.Health;
+        activeMovementSpeed = PlayerStats.MovementSpeed;
     }
 
     private void FixedUpdate()
@@ -53,10 +53,16 @@ public class PlayerController : MonoBehaviour
     private IEnumerator SetDashBools()
     {
         canDash = false;
-        activeMovementSpeed = DashSpeed;
-        yield return new WaitForSeconds(DashDuration);
-        activeMovementSpeed = MovementSpeed;
-        yield return new WaitForSeconds(DashCooldown - DashDuration);
+        activeMovementSpeed = PlayerStats.DashSpeed;
+        yield return new WaitForSeconds(PlayerStats.DashLength);
+        activeMovementSpeed = PlayerStats.MovementSpeed;
+        yield return new WaitForSeconds(PlayerStats.DashCooldown - PlayerStats.DashLength);
         canDash = true;
+    }
+
+    public void DamagePlayer(int damage)
+    {
+        currentHealth -= damage;
+        Debug.Log(currentHealth);
     }
 }

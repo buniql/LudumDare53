@@ -5,6 +5,7 @@ using UnityEngine;
 public class PackageSpawner : MonoBehaviour
 {
     public GameObject PackagePrefab;
+    public Transform PackageSpawnLocation;
     public float SpawnCooldown = 5f;
     private bool canSpawn = true;
 
@@ -14,7 +15,7 @@ public class PackageSpawner : MonoBehaviour
         if (canSpawn)
         {
             StartCoroutine(Cooldown());
-            var spawned = Instantiate(PackagePrefab, transform.position + RandomVector2Offset(), Quaternion.identity);
+            var spawned = Instantiate(PackagePrefab, PackageSpawnLocation.position + RandomVector2Offset(), Quaternion.identity);
             spawned.GetComponent<PackageMovement>().Deactivate();
         }
 
@@ -22,7 +23,7 @@ public class PackageSpawner : MonoBehaviour
 
     private Vector3 RandomVector2Offset()
     {
-        return new Vector3(Random.Range(-2f, 2f), Random.Range(-2f, 2f), 0);
+        return new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), -1);
     }
 
     private IEnumerator Cooldown()
