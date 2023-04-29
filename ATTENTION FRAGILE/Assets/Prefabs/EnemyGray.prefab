@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7755352828710652422}
   - component: {fileID: 7755352828710652423}
   - component: {fileID: 7755352828710652416}
-  - component: {fileID: 7755352828710652417}
+  - component: {fileID: 6588406552275295284}
   - component: {fileID: 7755352828710652418}
   m_Layer: 0
   m_Name: EnemyGray
@@ -108,7 +108,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &7755352828710652417
+--- !u!114 &6588406552275295284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,16 +117,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7755352828710652419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b811579bffac81244a81a2b8df03c3b4, type: 3}
+  m_Script: {fileID: 11500000, guid: de744a25a23153245b73005a08aad322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NeededPackageAmount: 2
+  NeededPackageAmount: 5
   MovementSpeed: 6
   ActivationDistance: 20
-  AttackDamage: 10
+  AttackDamage: 1
   AttackRange: 3
   AttackCooldown: 1
+  canAttack: 1
+  Player: {fileID: 0}
   PrefabOnDeath: {fileID: 5759968824317844210, guid: 69da695d3f99e1b4a98ecfcda36c765f, type: 3}
+  direction: {x: 0, y: 0, z: 0}
+  _rigidbody2D: {fileID: 0}
 --- !u!58 &7755352828710652418
 CircleCollider2D:
   m_ObjectHideFlags: 0

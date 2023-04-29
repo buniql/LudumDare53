@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3073446171455852664}
   - component: {fileID: 3073446171455852665}
   - component: {fileID: 3073446171455852670}
-  - component: {fileID: 3073446171455852671}
+  - component: {fileID: 816520848575356535}
   - component: {fileID: 3073446171455852668}
   m_Layer: 0
   m_Name: EnemyPink
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3073446171455852669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -25.85, y: 0, z: -1}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,7 +108,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3073446171455852671
+--- !u!114 &816520848575356535
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,13 +117,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3073446171455852669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b811579bffac81244a81a2b8df03c3b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f21f03804d03754d917b42d03d61373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NeededPackageAmount: 2
+  NeededPackageAmount: 3
   MovementSpeed: 6
   ActivationDistance: 20
-  AttackDamage: 10
+  AttackDamage: 1
   AttackRange: 3
   AttackCooldown: 1
   PrefabOnDeath: {fileID: 3536217319947076749, guid: f8b77a40b54e4af43b1616cd3d050a94, type: 3}

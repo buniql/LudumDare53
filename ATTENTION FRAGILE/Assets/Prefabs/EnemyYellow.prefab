@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8931705415065752408}
   - component: {fileID: 8931705415065752409}
   - component: {fileID: 8931705415065752410}
-  - component: {fileID: 8931705415065752411}
+  - component: {fileID: 4337840301519958865}
   - component: {fileID: 8931705415065752412}
   m_Layer: 0
   m_Name: EnemyYellow
@@ -108,7 +108,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8931705415065752411
+--- !u!114 &4337840301519958865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,16 +117,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8931705415065752413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b811579bffac81244a81a2b8df03c3b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 367bf28125ae3db48b974924cb8b7f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NeededPackageAmount: 2
+  NeededPackageAmount: 3
   MovementSpeed: 6
   ActivationDistance: 20
-  AttackDamage: 10
+  AttackDamage: 1
   AttackRange: 3
   AttackCooldown: 1
-  PrefabOnDeath: {fileID: 6953376289208722083, guid: 7487fa8a41104224ca3b0f659b0c0358, type: 3}
+  canAttack: 1
+  Player: {fileID: 0}
+  PrefabOnDeath: {fileID: 611298246577752804, guid: de7e7151ed0b12a44a35fb783afbfff3, type: 3}
+  direction: {x: 0, y: 0, z: 0}
+  _rigidbody2D: {fileID: 0}
 --- !u!58 &8931705415065752412
 CircleCollider2D:
   m_ObjectHideFlags: 0

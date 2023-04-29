@@ -9,13 +9,17 @@ public class EnemyController : MonoBehaviour
     public int AttackDamage;
     public float AttackRange;
     public float AttackCooldown;
-    private bool canAttack = true;
-    private GameObject Player;
+    [HideInInspector]
+    public bool canAttack = true;
+    [HideInInspector]
+    public GameObject Player;
     public GameObject PrefabOnDeath;
-    private Vector3 direction;
+    [HideInInspector]
+    public Vector3 direction;
     
     private bool activated = false;
-    private Rigidbody2D _rigidbody2D;
+    [HideInInspector]
+    public Rigidbody2D _rigidbody2D;
     
     void Start()
     {
@@ -44,9 +48,7 @@ public class EnemyController : MonoBehaviour
 
         if (NeededPackageAmount == 0)
         {
-            var spawn = Instantiate(PrefabOnDeath, transform.position, Quaternion.identity);
-            spawn.transform.rotation = transform.rotation;
-            Destroy(gameObject);
+            Die();
         }
         
         if(Vector3.Distance(transform.position, Player.transform.position) < AttackRange && canAttack)
@@ -55,12 +57,19 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    private void Move()
+    public virtual void Die()
+    {
+        var spawn = Instantiate(PrefabOnDeath, transform.position, Quaternion.identity);
+        spawn.transform.rotation = transform.rotation;
+        Destroy(gameObject);
+    }
+
+    public virtual void Move()
     {
         _rigidbody2D.MovePosition(transform.position + direction * MovementSpeed * Time.fixedDeltaTime);
     }
 
-    private IEnumerator Attack()
+    public virtual IEnumerator Attack()
     {
         canAttack = false;
         Player.GetComponent<PlayerController>().DamagePlayer(AttackDamage);
@@ -68,7 +77,7 @@ public class EnemyController : MonoBehaviour
         canAttack = true;
     }
 
-    public void DecreaseNeededPackageAmount()
+    public virtual void DecreaseNeededPackageAmount()
     {
         NeededPackageAmount -= 1;
     }

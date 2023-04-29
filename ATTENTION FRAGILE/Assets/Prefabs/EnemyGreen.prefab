@@ -123,7 +123,7 @@ MonoBehaviour:
   NeededPackageAmount: 2
   MovementSpeed: 6
   ActivationDistance: 20
-  AttackDamage: 10
+  AttackDamage: 1
   AttackRange: 3
   AttackCooldown: 1
   PrefabOnDeath: {fileID: 6924447923462555255, guid: 386de68e679f1d44490d9d1a77621013, type: 3}
