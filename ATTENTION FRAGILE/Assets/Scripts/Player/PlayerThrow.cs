@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PlayerThrow : MonoBehaviour
 {
-    public PlayerStats PlayerStats;
+    public StatsHolder StatsHolder;
     
     private bool canAttack = true;
     
@@ -18,6 +18,8 @@ public class PlayerThrow : MonoBehaviour
     private Camera _mainCamera;
 
     public TextMeshProUGUI PackageAmountUI;
+
+    public GameObject ShopUI;
     private void Start()
     {
         _mainCamera = Camera.main;
@@ -27,19 +29,19 @@ public class PlayerThrow : MonoBehaviour
     void Update()
     {
         PackageAmountUI.SetText(PackageAmount.ToString());
-        if (Input.GetMouseButton(0) &&  canAttack && PackageAmount != 0)
+        if (Input.GetMouseButton(0) &&  canAttack && PackageAmount != 0 && !ShopUI.active)
         {
             StartCoroutine(ThrowPackage());
         }
 
-        if (PackageRegen && PackageAmount <= PlayerStats.MaxProjectiles) StartCoroutine(RegenPackage());
+        if (PackageRegen && PackageAmount <= StatsHolder.MaxProjectiles) StartCoroutine(RegenPackage());
     }
 
     private IEnumerator RegenPackage()
     {
         PackageRegen = false;
         AddPackage();
-        yield return new WaitForSeconds(PlayerStats.ProjectileRegenTime);
+        yield return new WaitForSeconds(StatsHolder.ProjectileRegenTime);
         PackageRegen = true;
     }
 
@@ -48,7 +50,7 @@ public class PlayerThrow : MonoBehaviour
         canAttack = false;
         Instantiate(PacketPrefab, transform.position, Quaternion.identity);
         PackageAmount -= 1;
-        yield return new WaitForSeconds(PlayerStats.ShootCooldown);
+        yield return new WaitForSeconds(StatsHolder.ShootCooldown);
         canAttack = true;
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PackageMovement : MonoBehaviour
 {
-    public PlayerStats PlayerStats;
+    public StatsHolder StatsHolder;
     private PlayerThrow playerThrow;
     private float currentTime = 0f;
 
@@ -16,6 +16,7 @@ public class PackageMovement : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     void Start()
     {
+        StatsHolder = GameObject.Find("Player").GetComponent<StatsHolder>();
         _mainCamera = Camera.main;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         playerThrow = GameObject.Find("Player").GetComponent<PlayerThrow>();
@@ -30,13 +31,13 @@ public class PackageMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (currentTime < PlayerStats.ShootDistance && active)
+        if (currentTime < StatsHolder.ShootDistance && active)
         {
-            _rigidbody2D.MovePosition(_rigidbody2D.position + direction * PlayerStats.ShootSpeed * Time.fixedDeltaTime);
+            _rigidbody2D.MovePosition(_rigidbody2D.position + direction * StatsHolder.ShootSpeed * Time.fixedDeltaTime);
             currentTime += Time.fixedDeltaTime;
         }
 
-        if (currentTime >= PlayerStats.ShootDistance)
+        if (currentTime >= StatsHolder.ShootDistance)
         {
             active = false;
         }
@@ -62,7 +63,7 @@ public class PackageMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collider Enter");
-        if (col.tag == "Player" && playerThrow.PackageAmount <= PlayerStats.MaxProjectiles)
+        if (col.tag == "Player" && playerThrow.PackageAmount <= StatsHolder.MaxProjectiles)
         {
             GameObject.Find("Player").GetComponent<PlayerThrow>().AddPackage();
             Destroy(this.gameObject);
@@ -71,6 +72,10 @@ public class PackageMovement : MonoBehaviour
         if (col.tag == "Enemy")
         {
             col.GetComponent<EnemyController>().DecreaseNeededPackageAmount();
+            Destroy(this.gameObject);
+        }
+        if (col.tag == "Wall")
+        {
             Destroy(this.gameObject);
         }
     }

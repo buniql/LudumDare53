@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public int ProjectileDamage;
-    public float ProjectileSpeed;
-    
+    public StatsHolder StatsHolder;
+
     private Rigidbody2D _rigidbody2D;
     private Vector2 direction;
 
@@ -21,7 +20,7 @@ public class Projectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody2D.MovePosition(_rigidbody2D.position + direction * ProjectileSpeed * Time.fixedDeltaTime);
+        _rigidbody2D.MovePosition(_rigidbody2D.position + direction * StatsHolder.ShootSpeed * Time.fixedDeltaTime);
     }
     
     private void OnTriggerEnter2D(Collider2D col)
@@ -29,7 +28,11 @@ public class Projectile : MonoBehaviour
         Debug.Log("Collider Enter");
         if (col.tag == "Player")
         {
-            GameObject.Find("Player").GetComponent<PlayerController>().DamagePlayer(ProjectileDamage);
+            GameObject.Find("Player").GetComponent<PlayerController>().DamagePlayer(StatsHolder.ProjectileDamage);
+            Destroy(this.gameObject);
+        }
+        if (col.tag == "Wall")
+        {
             Destroy(this.gameObject);
         }
     }

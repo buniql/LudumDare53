@@ -32,31 +32,34 @@ public class EnemyController : MonoBehaviour
     
     void FixedUpdate()
     {
-        direction = Player.transform.position - transform.position;
-
-        if (direction.x > 0)
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-
-        if (direction.x < 0)
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-
-        if (direction.sqrMagnitude > 1f) direction.Normalize();
-
-        if (Vector3.Distance(transform.position, Player.transform.position) < ActivationDistance) activated = true;
-
-        if (activated)
+        if (Player.active)
         {
-            Move();
-        }
-
-        if (NeededPackageAmount == 0)
-        {
-            Die();
-        }
-        
-        if(Vector3.Distance(transform.position, Player.transform.position) < AttackRange && canAttack)
-        {
-            StartCoroutine((Attack()));
+                    direction = Player.transform.position - transform.position;
+            
+                    if (direction.x > 0)
+                        transform.rotation = Quaternion.Euler(0, 180, 0);
+            
+                    if (direction.x < 0)
+                        transform.rotation = Quaternion.Euler(0, 0, 0);
+            
+                    if (direction.sqrMagnitude > 1f) direction.Normalize();
+            
+                    if (Vector3.Distance(transform.position, Player.transform.position) < ActivationDistance) activated = true;
+            
+                    if (activated)
+                    {
+                        Move();
+                    }
+            
+                    if (NeededPackageAmount == 0)
+                    {
+                        Die();
+                    }
+                    
+                    if(Vector3.Distance(transform.position, Player.transform.position) < AttackRange && canAttack)
+                    {
+                        StartCoroutine((Attack()));
+                    }
         }
     }
 

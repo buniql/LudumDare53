@@ -8,7 +8,8 @@ using Random = UnityEngine.Random;
 public class CityGenerator : MonoBehaviour
 {
     public GameObject SpawnRoom;
-    public GameObject Street;
+    
+    public List<GameObject> Streets;
 
     public List<GameObject> DefaultRooms;
     public List<GameObject> ItemRoom;
@@ -76,14 +77,14 @@ public class CityGenerator : MonoBehaviour
             }
             
             var spawnedRoom = Instantiate(toSpawn, new Vector3(room.Key.x * RoomPositionOffsetX, room.Key.y * RoomPositionOffsetY, 1), Quaternion.identity);
-            CheckAdjecentStreets(new Vector2Int(room.Key.x, room.Key.y));
+            CheckAdjecentStreets(new Vector2Int(room.Key.x, room.Key.y), spawnedRoom);
             spawnedRoom.transform.parent = transform;
             spawnedRoom.name = "Room["+room.Key.x+"|"+room.Key.y+"]";
         }
 
         foreach (var street in streetGrid)
         {
-            var spawnedStreet = Instantiate(Street,
+            var spawnedStreet = Instantiate(Streets[street.Value],
                 new Vector3(street.Key.x * RoomPositionOffsetX + StreetPositionOffsetX - RoomPositionOffsetX * .5f,
                     street.Key.y * RoomPositionOffsetY + StreetPositionOffsetY - RoomPositionOffsetY * .5f, 1), Quaternion.identity);
             spawnedStreet.transform.parent = transform;
@@ -136,31 +137,43 @@ public class CityGenerator : MonoBehaviour
     }
     
     
-    private void CheckAdjecentStreets(Vector2Int pos)
+    private void CheckAdjecentStreets(Vector2Int pos, GameObject room)
     {
+        //room to the right
         if (roomGrid.ContainsKey(new Vector2Int(pos.x + 1, pos.y)))
         {
+            room.transform.Find("RightFullCollider").gameObject.SetActive(false);
+            room.transform.Find("RightHalfCollider").gameObject.SetActive(true);
             if (!streetGrid.ContainsKey(new Vector2(pos.x + .5f, pos.y)))
             {
-                streetGrid.Add(new Vector2(pos.x + .5f, pos.y), 1);
+                streetGrid.Add(new Vector2(pos.x + .5f, pos.y), 0);
             }
         }
+        //room to the left
         if (roomGrid.ContainsKey(new Vector2Int(pos.x - 1, pos.y)))
         {
+            room.transform.Find("LeftFullCollider").gameObject.SetActive(false);
+            room.transform.Find("LeftHalfCollider").gameObject.SetActive(true);
             if (!streetGrid.ContainsKey(new Vector2(pos.x - .5f, pos.y)))
             {
-                streetGrid.Add(new Vector2(pos.x - .5f, pos.y), 1);
+                streetGrid.Add(new Vector2(pos.x - .5f, pos.y), 0);
             }
         }
+        //room above
         if (roomGrid.ContainsKey(new Vector2Int(pos.x, pos.y + 1)))
         {
+            room.transform.Find("TopFullCollider").gameObject.SetActive(false);
+            room.transform.Find("TopHalfCollider").gameObject.SetActive(true);
             if (!streetGrid.ContainsKey(new Vector2(pos.x, pos.y + .5f)))
             {
                 streetGrid.Add(new Vector2(pos.x, pos.y + .5f), 1);
             }
         }
+        //room below
         if (roomGrid.ContainsKey(new Vector2Int(pos.x, pos.y - 1)))
         {
+            room.transform.Find("BottomFullCollider").gameObject.SetActive(false);
+            room.transform.Find("BottomHalfCollider").gameObject.SetActive(true);
             if (!streetGrid.ContainsKey(new Vector2(pos.x, pos.y - .5f)))
             {
                 streetGrid.Add(new Vector2(pos.x, pos.y - .5f), 1);
