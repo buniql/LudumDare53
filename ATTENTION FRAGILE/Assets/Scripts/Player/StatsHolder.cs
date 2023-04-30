@@ -3,37 +3,32 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatsHolder : MonoBehaviour
 {
     public PlayerStats PlayerStats;
     
-    [HideInInspector]
     public int Health;
-    [HideInInspector]
     public float MovementSpeed;
-    [HideInInspector]
-    public int ProjectileDamage;
-    [HideInInspector]
+    public float ProjectileSize;
     public float ProjectileRegenTime;
-    [HideInInspector]
     public int MaxProjectiles;
-    [HideInInspector]
     public float ShootSpeed;
-    [HideInInspector]
     public float ShootDistance;
-    [HideInInspector]
     public float ShootCooldown;
-    [HideInInspector]
     public int Coins;
 
     public TextMeshProUGUI CurrentHealthUI;
     public TextMeshProUGUI CurrentCointsUI;
+
+    public GameObject EndScreen;
+    public TextMeshProUGUI EndScreenUI;
     private void Start()
     {
-        Mathf.Clamp(Coins, 0, 999);
         Health = PlayerStats.Health;
         MovementSpeed = PlayerStats.MovementSpeed;
+        ProjectileSize = PlayerStats.ProjectileSize;
         ProjectileRegenTime = PlayerStats.ProjectileRegenTime;
         MaxProjectiles = PlayerStats.MaxProjectiles;
         ShootSpeed = PlayerStats.ShootSpeed;
@@ -43,14 +38,33 @@ public class StatsHolder : MonoBehaviour
 
     private void Update()
     {
+        Mathf.Clamp(MovementSpeed, 0, 30);
+        Mathf.Clamp(ProjectileSize, 1f, 5f);
+        Mathf.Clamp(ProjectileRegenTime, 0.1f, 10f);
+        Mathf.Clamp(ShootSpeed, 20, 80);
+        Mathf.Clamp(ShootCooldown, 0.1f, 10f);
+        Mathf.Clamp(Coins, 0, 999);
+        
         CurrentHealthUI.SetText(Health.ToString());
         CurrentCointsUI.SetText(Coins.ToString());
 
         if (Health <= 0)
         {
-            Destroy(this.gameObject);
-            //TODO Death Sound
+            EndScreen.SetActive(true);
+            EndScreenUI.SetText("you died..");
+            StartCoroutine(RestartGame());
         }
+    }
+
+    public void RemoteRestart()
+    {
+        StartCoroutine(RestartGame());
+    }
+
+    private IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Game");
     }
 
     public void SetHealth(int value)
@@ -61,10 +75,9 @@ public class StatsHolder : MonoBehaviour
     {
         MovementSpeed = value;
     }
-
-    public void SetProjectileDamage(int value)
+    public void SetProjectileSize(float value)
     {
-        ProjectileDamage = value;
+        ProjectileSize = value;
     }
     public void SetProjectileRegenTime(float value)
     {

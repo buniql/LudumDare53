@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6924447923462555253}
   - component: {fileID: 6924447923462555254}
   - component: {fileID: -3770261961570829011}
+  - component: {fileID: 6442577798684762282}
   m_Layer: 0
   m_Name: HouseGreen
-  m_TagString: Wall
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,3 +102,28 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.125
+--- !u!114 &6442577798684762282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6924447923462555255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392152df941f2f14bbe34d6ca1579f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NeededPackageAmount: 3
+  MovementSpeed: 0
+  ActivationDistance: 0
+  AttackDamage: 0
+  AttackRange: 0
+  AttackCooldown: 0
+  canAttack: 1
+  Player: {fileID: 0}
+  PrefabOnDeath: {fileID: 0}
+  CoinPrefab: {fileID: 0}
+  CoinDropAmount: 0
+  direction: {x: 0, y: 0, z: 0}
+  _rigidbody2D: {fileID: 0}

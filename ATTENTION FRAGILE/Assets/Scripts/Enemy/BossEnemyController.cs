@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BossEnemyController : EnemyController
@@ -18,16 +20,29 @@ public class BossEnemyController : EnemyController
 
     private bool canTeleport = true;
     
+    public GameObject EndScreen;
+    public TextMeshProUGUI EndScreenUI;
+    
     void Start()
     {
         Player = GameObject.Find("Player");
+
+        EndScreen = Player.GetComponent<StatsHolder>().EndScreen;
+        EndScreenUI = Player.GetComponent<StatsHolder>().EndScreenUI;
+        
         _rigidbody2D = GetComponent<Rigidbody2D>();
         activeMovementspeed = MovementSpeed;
+    }
+
+    private void Update()
+    {
+        if(NeededPackageAmount <= 0) Die();
     }
 
     public override IEnumerator Attack()
     {
         canAttack = false;
+        GameObject.Find("Sound").GetComponent<Sound>().PlaySound(4);
         Instantiate(Projectile, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(AttackCooldown);
         canAttack = true;
@@ -53,18 +68,23 @@ public class BossEnemyController : EnemyController
         canTeleport = true;
     }
 
-    public override void DecreaseNeededPackageAmount()
+    public override void DecreaseNeededPackageAmount(int amount)
     {
-        NeededPackageAmount -= 1;
-        if (NeededPackageAmount % 5 == 0)
+        NeededPackageAmount -= amount;
+        if (NeededPackageAmount % 6 == 0)
         {
+            GameObject.Find("Sound").GetComponent<Sound>().PlaySound(3);
+            
             Instantiate(PrefabOnDeath, Player.transform.position, Quaternion.identity);
         }
     }
     
     public virtual void Die()
     {
-        Destroy(gameObject);
-        //EndScreen + Sound!
+        GameObject.Find("Sound").GetComponent<Sound>().PlaySound(5);
+        EndScreen.SetActive(true);
+        EndScreenUI.SetText("you won!!");
+        GameObject.Find("Player").GetComponent<StatsHolder>().RemoteRestart();
+        Destroy(this.gameObject);
     }
 }

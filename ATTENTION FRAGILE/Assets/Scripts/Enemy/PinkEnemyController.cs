@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PinkEnemyController : EnemyController
 {
-    public override void DecreaseNeededPackageAmount()
+    public override void DecreaseNeededPackageAmount(int amount)
     {
-        NeededPackageAmount -= 1;
+        NeededPackageAmount -= amount;
         transform.localScale *= 2;
     }
 }

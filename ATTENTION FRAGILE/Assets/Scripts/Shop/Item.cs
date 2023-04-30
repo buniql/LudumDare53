@@ -11,7 +11,7 @@ public class Item : ScriptableObject
     
     public int Health;
     public float MovementSpeed;
-
+    
     public float ProjectileSize;
     public float ProjectileRegenTime;
     public int MaxProjectiles;

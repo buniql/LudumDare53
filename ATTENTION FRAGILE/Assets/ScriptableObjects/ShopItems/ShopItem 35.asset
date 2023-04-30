@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b37e40a248e4543abd0f59dbc5561e, type: 3}
   m_Name: ShopItem 35
   m_EditorClassIdentifier: 
-  Name: bubble wrap
-  Price: 11
-  Health: 1
-  MovementSpeed: 1
-  ProjectileSize: 1
-  ProjectileRegenTime: 1
-  MaxProjectiles: 1
-  ShootSpeed: 1
-  ShootDistance: 1
-  ShootCooldown: 1
+  Name: paper
+  Price: 23
+  Health: 0
+  MovementSpeed: 0
+  ProjectileSize: 0
+  ProjectileRegenTime: 0.5
+  MaxProjectiles: 0
+  ShootSpeed: 0
+  ShootDistance: 0
+  ShootCooldown: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b37e40a248e4543abd0f59dbc5561e, type: 3}
   m_Name: ShopItem 1
   m_EditorClassIdentifier: 
-  Name: bubble wrap
-  Price: 11
-  Health: 3
+  Name: sandwich
+  Price: 5
+  Health: 1
   MovementSpeed: 0
   ProjectileSize: 0
   ProjectileRegenTime: 0

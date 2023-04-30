@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b37e40a248e4543abd0f59dbc5561e, type: 3}
   m_Name: ShopItem 14
   m_EditorClassIdentifier: 
-  Name: rice
-  Price: 30
-  Health: 3
-  MovementSpeed: 0
+  Name: mango
+  Price: 16
+  Health: 0
+  MovementSpeed: 2
   ProjectileSize: 0
   ProjectileRegenTime: 0
   MaxProjectiles: 0
-  ShootSpeed: 0
+  ShootSpeed: 5
   ShootDistance: 0
   ShootCooldown: 0

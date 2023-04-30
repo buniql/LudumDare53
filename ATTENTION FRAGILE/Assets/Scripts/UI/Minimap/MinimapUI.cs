@@ -12,6 +12,8 @@ public class MinimapUI : MonoBehaviour
     public GameObject PlayerHeadImage;
     private GameObject playerHead;
 
+    public GameObject ShopUI;
+
     public List<GameObject> images;
 
     public Transform parent;
@@ -22,7 +24,7 @@ public class MinimapUI : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M) && !active) GenerateMinimap();
+        if (Input.GetKeyDown(KeyCode.M) && !active && !ShopUI.active) GenerateMinimap();
         if (Input.GetKeyUp(KeyCode.M))
         {
             active = false;

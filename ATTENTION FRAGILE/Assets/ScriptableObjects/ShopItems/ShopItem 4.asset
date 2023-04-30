@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b37e40a248e4543abd0f59dbc5561e, type: 3}
   m_Name: ShopItem 4
   m_EditorClassIdentifier: 
-  Name: scissor
-  Price: 11
-  Health: 0
+  Name: rice
+  Price: 15
+  Health: 3
   MovementSpeed: 0
   ProjectileSize: 0
-  ProjectileRegenTime: 0.2
+  ProjectileRegenTime: 0
   MaxProjectiles: 0
   ShootSpeed: 0
   ShootDistance: 0

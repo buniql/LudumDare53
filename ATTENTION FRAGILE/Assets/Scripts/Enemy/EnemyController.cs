@@ -32,42 +32,48 @@ public class EnemyController : MonoBehaviour
     
     void FixedUpdate()
     {
+        Behaviour();
+    }
+
+    public virtual void Behaviour()
+    {
         if (Player.active)
         {
-                    direction = Player.transform.position - transform.position;
+            direction = Player.transform.position - transform.position;
             
-                    if (direction.x > 0)
-                        transform.rotation = Quaternion.Euler(0, 180, 0);
+            if (direction.x > 0)
+                transform.rotation = Quaternion.Euler(0, 180, 0);
             
-                    if (direction.x < 0)
-                        transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (direction.x < 0)
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             
-                    if (direction.sqrMagnitude > 1f) direction.Normalize();
+            if (direction.sqrMagnitude > 1f) direction.Normalize();
             
-                    if (Vector3.Distance(transform.position, Player.transform.position) < ActivationDistance) activated = true;
+            if (Vector3.Distance(transform.position, Player.transform.position) < ActivationDistance) activated = true;
             
-                    if (activated)
-                    {
-                        Move();
-                    }
+            if (activated)
+            {
+                Move();
+            }
             
-                    if (NeededPackageAmount == 0)
-                    {
-                        Die();
-                    }
+            if (NeededPackageAmount <= 0)
+            {
+                Die();
+            }
                     
-                    if(Vector3.Distance(transform.position, Player.transform.position) < AttackRange && canAttack)
-                    {
-                        StartCoroutine((Attack()));
-                    }
+            if(Vector3.Distance(transform.position, Player.transform.position) < AttackRange && canAttack)
+            {
+                StartCoroutine((Attack()));
+            }
         }
     }
 
     public virtual void Die()
     {
+        GameObject.Find("Sound").GetComponent<Sound>().PlaySound(5);
         for(int i = 0; i < CoinDropAmount; i++)
         {
-            Instantiate(CoinPrefab, transform.position + new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), -1) + Vector3.down * 3, Quaternion.identity);
+            Instantiate(CoinPrefab, transform.position + new Vector3(Random.Range(-4, 4), Random.Range(-4, 4), -1) + Vector3.down * 3, Quaternion.identity);
         }
         var spawn = Instantiate(PrefabOnDeath, transform.position, Quaternion.identity);
         spawn.transform.rotation = transform.rotation;
@@ -87,8 +93,9 @@ public class EnemyController : MonoBehaviour
         canAttack = true;
     }
 
-    public virtual void DecreaseNeededPackageAmount()
+    public virtual void DecreaseNeededPackageAmount(int amount)
     {
+        GameObject.Find("Sound").GetComponent<Sound>().PlaySound(amount);
         NeededPackageAmount -= 1;
     }
 }

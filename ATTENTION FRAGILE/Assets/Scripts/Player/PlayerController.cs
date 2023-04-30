@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private Camera _mainCamera;
     private Rigidbody2D _rigidbody2D;
 
+    private bool dead = false;
+
     private void Start()
     {
         _mainCamera = Camera.main;
@@ -31,22 +33,32 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        var direction = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        if (StatsHolder.Health <= 0)
+        {
+            dead = true;
+            GameObject.Find("PlayerSprite").SetActive(false);
+        }
 
-        if (direction.x < transform.position.x)
-            Sprite.transform.rotation = Quaternion.Euler(0, 180, 0);
+        if (!dead)
+        {
+            var direction = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
-        if (direction.x > transform.position.x)
-            Sprite.transform.rotation = Quaternion.Euler(0, 0, 0);
+            if (direction.x < transform.position.x)
+                Sprite.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+            if (direction.x > transform.position.x)
+                Sprite.transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
     }
 
     public void DamagePlayer(int damage)
     {
+        GameObject.Find("Sound").GetComponent<Sound>().PlaySound(1);
         StatsHolder.SetHealth(StatsHolder.Health - damage);
     }
 
     public void AddCoins(int amount)
     {
-        StatsHolder.SetCoins(StatsHolder.Coins - amount);
+        StatsHolder.SetCoins(StatsHolder.Coins + amount);
     }
 }

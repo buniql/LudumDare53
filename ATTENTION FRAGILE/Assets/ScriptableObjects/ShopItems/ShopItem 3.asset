@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b37e40a248e4543abd0f59dbc5561e, type: 3}
   m_Name: ShopItem 3
   m_EditorClassIdentifier: 
-  Name: tape
-  Price: 11
-  Health: 0
+  Name: pretzels
+  Price: 8
+  Health: 2
   MovementSpeed: 0
   ProjectileSize: 0
   ProjectileRegenTime: 0
   MaxProjectiles: 0
   ShootSpeed: 0
-  ShootDistance: 3
+  ShootDistance: 0
   ShootCooldown: 0

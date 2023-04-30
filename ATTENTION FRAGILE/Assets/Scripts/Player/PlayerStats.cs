@@ -7,7 +7,8 @@ public class PlayerStats : ScriptableObject
 {
     public int Health;
     public float MovementSpeed;
-
+    
+    public float ProjectileSize;
     public float ProjectileRegenTime;
     public int MaxProjectiles;
     

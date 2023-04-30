@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3725661122294787351}
   - component: {fileID: 6678670101931970778}
   - component: {fileID: 6020090715084040616}
+  - component: {fileID: -555193243209617961}
   m_Layer: 0
   m_Name: Truck
   m_TagString: Wall
@@ -153,5 +154,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AvailableItems:
   - {fileID: 0}
+  ShopDisplay: {fileID: 0}
   Display: {fileID: 0}
-  PlayerController: {fileID: 0}
+  StatsHolder: {fileID: 0}
+--- !u!114 &-555193243209617961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871980968866236637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 0
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -1.125, y: -1.125, z: 0}
+  - {x: -1.125, y: 1.125, z: 0}
+  - {x: 1.125, y: 1.125, z: 0}
+  - {x: 1.125, y: -1.125, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -1259898

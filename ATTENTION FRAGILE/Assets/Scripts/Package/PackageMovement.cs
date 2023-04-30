@@ -6,6 +6,7 @@ using UnityEngine;
 public class PackageMovement : MonoBehaviour
 {
     public StatsHolder StatsHolder;
+    
     private PlayerThrow playerThrow;
     private float currentTime = 0f;
 
@@ -17,6 +18,7 @@ public class PackageMovement : MonoBehaviour
     void Start()
     {
         StatsHolder = GameObject.Find("Player").GetComponent<StatsHolder>();
+
         _mainCamera = Camera.main;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         playerThrow = GameObject.Find("Player").GetComponent<PlayerThrow>();
@@ -71,9 +73,10 @@ public class PackageMovement : MonoBehaviour
 
         if (col.tag == "Enemy")
         {
-            col.GetComponent<EnemyController>().DecreaseNeededPackageAmount();
+            col.GetComponent<EnemyController>().DecreaseNeededPackageAmount(1);
             Destroy(this.gameObject);
         }
+        
         if (col.tag == "Wall")
         {
             Destroy(this.gameObject);

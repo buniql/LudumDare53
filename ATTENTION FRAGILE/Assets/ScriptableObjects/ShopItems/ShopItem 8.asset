@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b37e40a248e4543abd0f59dbc5561e, type: 3}
   m_Name: ShopItem 8
   m_EditorClassIdentifier: 
-  Name: sandwich
-  Price: 11
+  Name: hot dog
+  Price: 5
   Health: 1
   MovementSpeed: 0
   ProjectileSize: 0
-  ProjectileRegenTime: 0.1
+  ProjectileRegenTime: 0
   MaxProjectiles: 0
   ShootSpeed: 0
   ShootDistance: 0

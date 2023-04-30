@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b37e40a248e4543abd0f59dbc5561e, type: 3}
   m_Name: ShopItem 9
   m_EditorClassIdentifier: 
-  Name: apple
-  Price: 11
-  Health: 1
-  MovementSpeed: 1
+  Name: fried chicken
+  Price: 50
+  Health: 10
+  MovementSpeed: 0
   ProjectileSize: 0
   ProjectileRegenTime: 0
   MaxProjectiles: 0

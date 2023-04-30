@@ -6,11 +6,11 @@ public class YellowEnemyController : EnemyController
 {
     public override void Die()
     {
+        GameObject.Find("Sound").GetComponent<Sound>().PlaySound(5);
         var spawn1 = Instantiate(PrefabOnDeath, transform.position + new Vector3(Random.Range(-4, 4), Random.Range(-4, 4), 0), Quaternion.identity);
         spawn1.transform.rotation = transform.rotation;
         var spawn2 = Instantiate(PrefabOnDeath, transform.position + new Vector3(Random.Range(-4, 4), Random.Range(-4, 4), 0), Quaternion.identity);
         spawn2.transform.rotation = transform.rotation;
         Destroy(gameObject);
-        
     }
 }

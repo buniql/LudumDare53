@@ -107,7 +107,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &291434921442434811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +129,8 @@ MonoBehaviour:
   canAttack: 1
   Player: {fileID: 0}
   PrefabOnDeath: {fileID: 3341216324864030455, guid: db9e79595e561cd4fb6f75df5f8a074b, type: 3}
+  CoinPrefab: {fileID: 0}
+  CoinDropAmount: 0
   direction: {x: 0, y: 0, z: 0}
   _rigidbody2D: {fileID: 0}
   Projectile: {fileID: 7707666173481020044, guid: e638780e5a72b834fa6c0ed529af2644, type: 3}
@@ -136,6 +138,8 @@ MonoBehaviour:
   DistanceToTeleport: 20
   TeleportTime: 0.3
   TeleportCooldown: 5
+  EndScreen: {fileID: 0}
+  EndScreenUI: {fileID: 0}
 --- !u!58 &291434921442434809
 CircleCollider2D:
   m_ObjectHideFlags: 0

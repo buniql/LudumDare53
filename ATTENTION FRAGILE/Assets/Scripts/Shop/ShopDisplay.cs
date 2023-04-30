@@ -22,7 +22,6 @@ public class ShopDisplay : MonoBehaviour
 
     public void SetSlot1(string name, string description, int price)
     {
-        Debug.Log("Setting Slot1");
         Slot1.SetShopSlot(name, description, price);
     }
     

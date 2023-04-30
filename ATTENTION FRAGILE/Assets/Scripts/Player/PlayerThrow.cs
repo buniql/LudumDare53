@@ -20,6 +20,9 @@ public class PlayerThrow : MonoBehaviour
     public TextMeshProUGUI PackageAmountUI;
 
     public GameObject ShopUI;
+
+    private bool dead = false;
+    
     private void Start()
     {
         _mainCamera = Camera.main;
@@ -28,13 +31,23 @@ public class PlayerThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PackageAmountUI.SetText(PackageAmount.ToString());
-        if (Input.GetMouseButton(0) &&  canAttack && PackageAmount != 0 && !ShopUI.active)
+        if (StatsHolder.Health <= 0)
         {
-            StartCoroutine(ThrowPackage());
+            dead = true;
         }
 
-        if (PackageRegen && PackageAmount <= StatsHolder.MaxProjectiles) StartCoroutine(RegenPackage());
+        if (!dead)
+        {
+            PackageAmountUI.SetText(PackageAmount.ToString());
+
+            if (Input.GetMouseButton(0) &&  canAttack && PackageAmount != 0 && !ShopUI.active)
+            {
+                StartCoroutine(ThrowPackage());
+            }
+
+            if (PackageRegen && PackageAmount <= StatsHolder.MaxProjectiles) StartCoroutine(RegenPackage());
+        }
+
     }
 
     private IEnumerator RegenPackage()
@@ -48,7 +61,10 @@ public class PlayerThrow : MonoBehaviour
     private IEnumerator ThrowPackage()
     {
         canAttack = false;
-        Instantiate(PacketPrefab, transform.position, Quaternion.identity);
+        GameObject.Find("Sound").GetComponent<Sound>().PlaySound(0);
+        GameObject package = Instantiate(PacketPrefab, transform.position, Quaternion.identity);
+        package.transform.localScale = new Vector3(StatsHolder.ProjectileSize, StatsHolder.ProjectileSize, 1);
+        
         PackageAmount -= 1;
         yield return new WaitForSeconds(StatsHolder.ShootCooldown);
         canAttack = true;

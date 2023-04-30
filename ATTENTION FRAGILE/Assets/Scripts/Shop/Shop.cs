@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -55,7 +56,7 @@ public class Shop : MonoBehaviour
     {
         String result = "";
         if (item.Health != 0) result += "Health+" + item.Health + System.Environment.NewLine;
-        if (item.MovementSpeed != 0) result += "Movement Speed + " + item.MovementSpeed + System.Environment.NewLine;
+        if (item.MovementSpeed != 0) result += "Movement Speed+" + item.MovementSpeed + System.Environment.NewLine;
         if (item.ProjectileSize != 0) result += "Package Size+" + item.ProjectileSize + System.Environment.NewLine;
         if (item.ProjectileRegenTime != 0) result += "Package Regen-" + item.ProjectileRegenTime + System.Environment.NewLine;
         if (item.MaxProjectiles != 0) result += "Max. Packages+" + item.MaxProjectiles + System.Environment.NewLine;
@@ -69,8 +70,11 @@ public class Shop : MonoBehaviour
     {
         if (selection[slot].Price <= StatsHolder.Coins)
         {
+            GameObject.Find("Sound").GetComponent<Sound>().PlaySound(3);
+            
             StatsHolder.SetCoins(StatsHolder.Coins - selection[slot].Price);
             StatsHolder.SetHealth(StatsHolder.Health + selection[slot].Health);
+            StatsHolder.SetProjectileSize(StatsHolder.ProjectileSize + selection[slot].ProjectileSize);
             StatsHolder.SetMovementSpeed(StatsHolder.MovementSpeed + selection[slot].MovementSpeed);
             StatsHolder.SetProjectileRegenTime(StatsHolder.ProjectileRegenTime - selection[slot].ProjectileRegenTime);
             StatsHolder.SetMaxProjectiles(StatsHolder.MaxProjectiles + selection[slot].MaxProjectiles);
