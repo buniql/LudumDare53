@@ -23,7 +23,7 @@ public class CityGenerator : MonoBehaviour
     public int RoomPositionOffsetY;
     public int StreetPositionOffsetY;
     
-    public int TotalAmountOfRooms;
+    public static int TotalAmountOfRooms = 8;
     private int currentAmountOfRooms = 0;
 
     public MinimapUI MinimapUI;

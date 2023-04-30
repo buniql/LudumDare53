@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class MinimapUI : MonoBehaviour
 {
     public CityGenerator CityGenerator;
-
+    public TutorialCityGenerator TutorialCityGenerator;
+    
     public GameObject Player;
     public GameObject PlayerHeadImage;
     private GameObject playerHead;
@@ -45,15 +46,32 @@ public class MinimapUI : MonoBehaviour
     public void GenerateMinimap()
     {
         active = true;
-        foreach (var room in CityGenerator.roomGrid)
+        if (CityGenerator != null)
         {
-            //hier hin kommt er
-            var uiElement = Instantiate(images[room.Value], new Vector3(room.Key.x * distance, room.Key.y * distance, 0), Quaternion.identity);
-            uiElement.transform.SetParent(parent, false); 
-            //uiElement.transform.position = new Vector3(room.Key.x * distance, room.Key.y * distance, 0);
+            foreach (var room in CityGenerator.roomGrid)
+            {
+                //hier hin kommt er
+                var uiElement = Instantiate(images[room.Value], new Vector3(room.Key.x * distance, room.Key.y * distance, 0), Quaternion.identity);
+                uiElement.transform.SetParent(parent, false); 
+                //uiElement.transform.position = new Vector3(room.Key.x * distance, room.Key.y * distance, 0);
+            }
+            playerHead = Instantiate(PlayerHeadImage, new Vector3(0,0,-1), Quaternion.identity);
+            playerHead.transform.SetParent(parent, false);
         }
-        playerHead = Instantiate(PlayerHeadImage, new Vector3(0,0,-1), Quaternion.identity);
-        playerHead.transform.SetParent(parent, false);
+
+        if (TutorialCityGenerator != null)
+        {
+            foreach (var room in TutorialCityGenerator.roomGrid)
+            {
+                //hier hin kommt er
+                var uiElement = Instantiate(images[room.Value], new Vector3(room.Key.x * distance, room.Key.y * distance, 0), Quaternion.identity);
+                uiElement.transform.SetParent(parent, false); 
+                //uiElement.transform.position = new Vector3(room.Key.x * distance, room.Key.y * distance, 0);
+            }
+            playerHead = Instantiate(PlayerHeadImage, new Vector3(0,0,-1), Quaternion.identity);
+            playerHead.transform.SetParent(parent, false);
+        }
+        
     }
 
 
