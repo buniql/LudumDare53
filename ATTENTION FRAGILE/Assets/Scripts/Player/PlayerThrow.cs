@@ -11,7 +11,9 @@ public class PlayerThrow : MonoBehaviour
     private bool canAttack = true;
     
     public GameObject PacketPrefab;
-    private List<GameObject> PacketList = new List<GameObject>();
+    public int PackageAmount = 0;
+
+    private bool PackageRegen = true;
 
     private Camera _mainCamera;
 
@@ -24,24 +26,34 @@ public class PlayerThrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PackageAmountUI.SetText(PacketList.Count.ToString());
-        if (Input.GetMouseButton(0) &&  canAttack && PacketList.Count != 0)
+        PackageAmountUI.SetText(PackageAmount.ToString());
+        if (Input.GetMouseButton(0) &&  canAttack && PackageAmount != 0)
         {
             StartCoroutine(ThrowPackage());
         }
+
+        if (PackageRegen && PackageAmount <= PlayerStats.MaxProjectiles) StartCoroutine(RegenPackage());
+    }
+
+    private IEnumerator RegenPackage()
+    {
+        PackageRegen = false;
+        AddPackage();
+        yield return new WaitForSeconds(PlayerStats.ProjectileRegenTime);
+        PackageRegen = true;
     }
 
     private IEnumerator ThrowPackage()
     {
         canAttack = false;
-        Instantiate(PacketList[0], transform.position, Quaternion.identity);
-        PacketList.RemoveAt(0);
+        Instantiate(PacketPrefab, transform.position, Quaternion.identity);
+        PackageAmount -= 1;
         yield return new WaitForSeconds(PlayerStats.ShootCooldown);
         canAttack = true;
     }
 
     public void AddPackage()
     {
-        PacketList.Add(PacketPrefab);
+        PackageAmount += 1;
     }
 }

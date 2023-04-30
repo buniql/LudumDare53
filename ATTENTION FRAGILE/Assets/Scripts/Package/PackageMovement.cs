@@ -6,6 +6,7 @@ using UnityEngine;
 public class PackageMovement : MonoBehaviour
 {
     public PlayerStats PlayerStats;
+    private PlayerThrow playerThrow;
     private float currentTime = 0f;
 
     private Vector2 direction = Vector2.zero;
@@ -17,6 +18,7 @@ public class PackageMovement : MonoBehaviour
     {
         _mainCamera = Camera.main;
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        playerThrow = GameObject.Find("Player").GetComponent<PlayerThrow>();
         
         direction = (Vector2)_mainCamera.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
         direction = direction.normalized;
@@ -60,7 +62,7 @@ public class PackageMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         Debug.Log("Collider Enter");
-        if (col.tag == "Player")
+        if (col.tag == "Player" && playerThrow.PackageAmount <= PlayerStats.MaxProjectiles)
         {
             GameObject.Find("Player").GetComponent<PlayerThrow>().AddPackage();
             Destroy(this.gameObject);

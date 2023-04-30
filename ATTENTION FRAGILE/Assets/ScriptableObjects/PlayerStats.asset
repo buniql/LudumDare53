@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 5
   MovementSpeed: 10
+  ProjectileRegenTime: 2
+  MaxProjectiles: 5
   ShootSpeed: 40
-  ShootAmount: 1
   ShootDistance: 0.3
   ShootCooldown: 1
   DashSpeed: 30

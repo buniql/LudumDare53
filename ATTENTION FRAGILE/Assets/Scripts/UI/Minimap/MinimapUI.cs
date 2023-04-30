@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,19 @@ public class MinimapUI : MonoBehaviour
 
     public Transform parent;
     
-    private float distance = 32f;
-    
+    private float distance = 64f;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M)) GenerateMinimap();
+        if (Input.GetKeyUp(KeyCode.M))
+        {
+            foreach (Transform child in parent) {
+                GameObject.Destroy(child.gameObject);
+            }
+        }
+    }
+
     // Start is called before the first frame update
     public void GenerateMinimap()
     {

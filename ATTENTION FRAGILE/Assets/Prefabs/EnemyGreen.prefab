@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -126,7 +126,11 @@ MonoBehaviour:
   AttackDamage: 1
   AttackRange: 3
   AttackCooldown: 1
+  canAttack: 1
+  Player: {fileID: 0}
   PrefabOnDeath: {fileID: 6924447923462555255, guid: 386de68e679f1d44490d9d1a77621013, type: 3}
+  direction: {x: 0, y: 0, z: 0}
+  _rigidbody2D: {fileID: 0}
 --- !u!58 &611298246577752805
 CircleCollider2D:
   m_ObjectHideFlags: 0

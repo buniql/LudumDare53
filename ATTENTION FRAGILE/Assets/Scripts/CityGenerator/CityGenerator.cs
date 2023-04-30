@@ -37,7 +37,7 @@ public class CityGenerator : MonoBehaviour
 
         foreach (var room in roomGrid)
         {
-            if(room.Value == 1 && Vector2.Distance(new Vector2Int(room.Key.x, room.Key.y), Vector2.zero) > Vector2.Distance(bossRoomLocation, bossRoomLocation)) bossRoomLocation = new Vector2Int(room.Key.x, room.Key.y);
+            if(room.Value == 1 && Vector2.Distance(new Vector2Int(room.Key.x, room.Key.y), Vector2.zero) > Vector2.Distance(bossRoomLocation, Vector2.zero)) bossRoomLocation = new Vector2Int(room.Key.x, room.Key.y);
         }
         
         roomGrid[bossRoomLocation] = 3;
@@ -47,7 +47,7 @@ public class CityGenerator : MonoBehaviour
 
         foreach (var room in roomGrid)
         {
-            if(room.Value == 1 && Vector2.Distance(new Vector2Int(room.Key.x, room.Key.y), Vector2.zero) > Vector2.Distance(lootRoomLocation, lootRoomLocation)) lootRoomLocation = new Vector2Int(room.Key.x, room.Key.y);
+            if(room.Value == 1 && Vector2.Distance(new Vector2Int(room.Key.x, room.Key.y), Vector2.zero) > Vector2.Distance(lootRoomLocation, Vector2.zero)) lootRoomLocation = new Vector2Int(room.Key.x, room.Key.y);
         }
         
         roomGrid[lootRoomLocation] = 2;
@@ -77,8 +77,6 @@ public class CityGenerator : MonoBehaviour
             spawnedRoom.transform.parent = transform;
             spawnedRoom.name = "Room["+room.Key.x+"|"+room.Key.y+"]";
         }
-        
-        MinimapUI.GenerateMinimap();
 
         foreach (var street in streetGrid)
         {

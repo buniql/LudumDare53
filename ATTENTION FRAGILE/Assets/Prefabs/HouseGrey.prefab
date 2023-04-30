@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5759968824317844220}
   - component: {fileID: 5759968824317844221}
-  - component: {fileID: 5759968824317844223}
+  - component: {fileID: 1753801006638124209}
   m_Layer: 0
   m_Name: HouseGrey
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5759968824317844223
+--- !u!58 &1753801006638124209
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +98,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.75

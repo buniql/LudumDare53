@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3536217319947076747}
   - component: {fileID: 3536217319947076746}
-  - component: {fileID: 3536217319947076744}
+  - component: {fileID: -905795440171247876}
   m_Layer: 0
   m_Name: HousePink
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &3536217319947076744
+--- !u!58 &-905795440171247876
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +98,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.75

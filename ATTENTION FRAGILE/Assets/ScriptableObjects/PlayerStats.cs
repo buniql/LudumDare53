@@ -8,8 +8,10 @@ public class PlayerStats : ScriptableObject
     public int Health;
     public float MovementSpeed;
 
+    public float ProjectileRegenTime;
+    public int MaxProjectiles;
+    
     public float ShootSpeed;
-    public float ShootAmount;
     public float ShootDistance;
     public float ShootCooldown;
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6953376289208722093}
   - component: {fileID: 6953376289208722092}
-  - component: {fileID: 6953376289208722094}
+  - component: {fileID: 271693320973629188}
   m_Layer: 0
   m_Name: HouseYellow
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &6953376289208722094
+--- !u!58 &271693320973629188
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,6 +98,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 0.75
