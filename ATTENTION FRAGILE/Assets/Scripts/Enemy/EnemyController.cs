@@ -14,6 +14,8 @@ public class EnemyController : MonoBehaviour
     [HideInInspector]
     public GameObject Player;
     public GameObject PrefabOnDeath;
+    public GameObject CoinPrefab;
+    public int CoinDropAmount;
     [HideInInspector]
     public Vector3 direction;
     
@@ -60,6 +62,10 @@ public class EnemyController : MonoBehaviour
 
     public virtual void Die()
     {
+        for(int i = 0; i < CoinDropAmount; i++)
+        {
+            Instantiate(CoinPrefab, transform.position + new Vector3(Random.Range(-2, 2), Random.Range(-2, 2), -1) + Vector3.down * 3, Quaternion.identity);
+        }
         var spawn = Instantiate(PrefabOnDeath, transform.position, Quaternion.identity);
         spawn.transform.rotation = transform.rotation;
         Destroy(gameObject);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,6 +8,10 @@ public class PlayerController : MonoBehaviour
     public PlayerStats PlayerStats;
 
     private int currentHealth;
+    public TextMeshProUGUI CurrentHealthUI;
+    
+    private int currentCoins = 0;
+    public TextMeshProUGUI CurrentCointsUI;
     
     public GameObject Sprite;
 
@@ -36,6 +41,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        CurrentHealthUI.SetText(currentHealth.ToString());
+        Mathf.Clamp(currentCoins, 0, 999);
+        CurrentCointsUI.SetText(currentCoins.ToString());
+        
         var direction = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
         if (direction.x < transform.position.x)
@@ -64,5 +73,15 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log(currentHealth);
+    }
+
+    public void AddCoins(int amount)
+    {
+        currentCoins += amount;
+    }
+
+    public void RemoveCoins(int amount)
+    {
+        currentCoins -= amount;
     }
 }

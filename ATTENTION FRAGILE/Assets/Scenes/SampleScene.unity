@@ -269,6 +269,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerStats: {fileID: 11400000, guid: 0e0b128829973bf41af669138224e7ce, type: 2}
+  CurrentHealthUI: {fileID: 455926131}
+  CurrentCointsUI: {fileID: 377431221}
   Sprite: {fileID: 1937866089}
 --- !u!58 &145049189
 CircleCollider2D:
@@ -482,7 +484,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 666
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b734234b75150b844b08b35ef38212e2, type: 2}
   m_sharedMaterial: {fileID: 635246749273500014, guid: b734234b75150b844b08b35ef38212e2, type: 2}
@@ -900,7 +902,7 @@ MonoBehaviour:
   StreetPositionOffsetX: 26
   RoomPositionOffsetY: 36
   StreetPositionOffsetY: 18
-  TotalAmountOfRooms: 10
+  TotalAmountOfRooms: 32
   MinimapUI: {fileID: 1693176261}
 --- !u!4 &588064254
 Transform:
@@ -1635,6 +1637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CityGenerator: {fileID: 588064253}
+  Player: {fileID: 145049184}
+  PlayerHeadImage: {fileID: 9111775570346946155, guid: 2e46d8a581e9b934c89acd8db0a1972f, type: 3}
   images:
   - {fileID: 104461776047629726, guid: fe6d266174c441e419a367de6b2956f0, type: 3}
   - {fileID: 3106497007032313558, guid: 1520c5638e639704e9f19db1725e5aa4, type: 3}

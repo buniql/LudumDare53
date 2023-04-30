@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -34,6 +35,8 @@ public class CityGenerator : MonoBehaviour
         List<Vector2Int> _roomIndexes = new List<Vector2Int>();
         
         Vector2Int bossRoomLocation = Vector2Int.zero;
+
+        roomGrid.Where(x => Mathf.Abs(x.Key.x) > 5 || Mathf.Abs(x.Key.y) > 5).ToList().ForEach(room => roomGrid.Remove(room.Key));
 
         foreach (var room in roomGrid)
         {

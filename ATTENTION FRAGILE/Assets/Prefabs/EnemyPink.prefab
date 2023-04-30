@@ -129,6 +129,8 @@ MonoBehaviour:
   canAttack: 1
   Player: {fileID: 0}
   PrefabOnDeath: {fileID: 3536217319947076749, guid: f8b77a40b54e4af43b1616cd3d050a94, type: 3}
+  CoinPrefab: {fileID: 3027843625418183940, guid: 79f9bfd2428f10a438509d32f1a8016a, type: 3}
+  CoinDropAmount: 3
   direction: {x: 0, y: 0, z: 0}
   _rigidbody2D: {fileID: 0}
 --- !u!58 &3073446171455852668

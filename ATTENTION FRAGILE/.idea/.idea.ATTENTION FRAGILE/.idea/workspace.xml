@@ -8,38 +8,16 @@
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyGreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyGreen.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyPink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyPink.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/EnemyYellow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/EnemyYellow.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HouseBlue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HouseBlue.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HouseGreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HouseGreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HouseGrey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HouseGrey.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HousePink.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HousePink.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HouseYellow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HouseYellow.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RoomBossUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/RoomBossUI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RoomLootUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/RoomLootUI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RoomPackageUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/RoomPackageUI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/RoomUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/RoomUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Loot/Room 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Loot/Room 1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Spawn.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Rooms/Spawn.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/PlayerStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/PlayerStats.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/PlayerStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/CityGenerator/CityGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CityGenerator/CityGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Package/PackageMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Package/PackageMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PackageSpawner.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PackageSpawner/PackageSpawner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PackageSpawner/PackageSpawner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/YellowEnemyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/YellowEnemyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerThrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerThrow.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Minimap/MinimapUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Minimap/MinimapUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Heart.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Heart.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/PackageCar.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/PackageCar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Room.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Room.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/RoomBoss.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/RoomBoss.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/RoomLoot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/RoomLoot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/RoomPackage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/RoomPackage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +29,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/BlueEnemyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/PinkEnemyController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Package/Coin.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Package/PackageMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Package/Projectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerThrow.cs" root0="FORCE_HIGHLIGHTING" />
@@ -127,7 +106,7 @@
       <option name="presentableId" value="Default" />
       <updated>1682747739106</updated>
       <workItem from="1682747740368" duration="41551000" />
-      <workItem from="1682845875360" duration="6089000" />
+      <workItem from="1682845875360" duration="11386000" />
     </task>
     <servers />
   </component>
