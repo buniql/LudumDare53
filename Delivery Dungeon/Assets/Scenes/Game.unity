@@ -961,7 +961,6 @@ MonoBehaviour:
   StreetPositionOffsetX: 26
   RoomPositionOffsetY: 36
   StreetPositionOffsetY: 18
-  TotalAmountOfRooms: 8
   MinimapUI: {fileID: 1693176261}
 --- !u!4 &588064254
 Transform:
@@ -3251,6 +3250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CityGenerator: {fileID: 588064253}
+  TutorialCityGenerator: {fileID: 0}
   Player: {fileID: 145049184}
   PlayerHeadImage: {fileID: 9111775570346946155, guid: 2e46d8a581e9b934c89acd8db0a1972f, type: 3}
   ShopUI: {fileID: 1846172673}
@@ -4651,7 +4651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3513721714405633675, guid: 0d18d17fd8e8c214282639338ed478e7, type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3513721714405633678, guid: 0d18d17fd8e8c214282639338ed478e7, type: 3}
       propertyPath: ShopUI
